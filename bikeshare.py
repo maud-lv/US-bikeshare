@@ -25,7 +25,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # Get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("\nWould you like to see data for Chicago, New York City or Washington?\n").title()
         if city not in city_list:
@@ -33,7 +33,7 @@ def get_filters():
         else:
             break
 
-    # TO DO: get user input for month (all, January, February, ... , June)
+    # Get user input for month (all, January, February, ... , June)
     while True:
         month = input("\nWhat month would you like to look for?\n").title()
         if month not in month_list:
@@ -41,7 +41,7 @@ def get_filters():
         else:
             break
 
-    # TO DO: get user input for day of week (all, Monday, Tuesday, ... Sunday)
+    # Get user input for day of week (all, Monday, Tuesday, ... Sunday)
     while True:
         day = input("\nWhat day of the week would you like to look for?\n").title()
         if day not in day_list:
@@ -91,16 +91,16 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
+    # Display the most common month
     common_month = df['month'].mode()[0]
     common_month = calendar.month_name[common_month]
     print('Most popular month: ', common_month)
 
-    # TO DO: display the most common day of week
+    # Display the most common day of week
     common_day = df['day_of_week'].mode()[0] 
     print('Most popular day of the week: ', common_day)
     
-    # TO DO: display the most common start hour
+    # Display the most common start hour
     common_hour = df['hour'].mode()[0]
     print('Most popular start hour: ', common_hour)
 
@@ -114,15 +114,15 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
     
-   # TO DO: display most commonly used start station
+   # Display most commonly used start station
     common_start_station = df['Start Station'].mode()[0]
     print('Most popular start station: ', common_start_station)
     
-    # TO DO: display most commonly used end station
+    # Display most commonly used end station
     common_end_station = df['End Station'].mode()[0]
     print('Most popular end station: ', common_end_station)
     
-    # TO DO: display most frequent combination of start station and end station trip
+    # Display most frequent combination of start station and end station trip
     end_to_end_trips = df['Start Station'] + " - " + df['End Station']
     common_trip = end_to_end_trips.mode()[0]
     print('Most popular trip: ', common_trip)
@@ -150,7 +150,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # Display total travel time
     total_travel_time = df['Trip Duration'].sum()
     days = total_travel_time // seconds_in_day
     hours = (total_travel_time - (days * seconds_in_day)) // seconds_in_hour
