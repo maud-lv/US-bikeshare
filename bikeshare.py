@@ -159,7 +159,7 @@ def trip_duration_stats(df):
 
     print('Total travel time: ', days, 'days', hours, 'hours', minutes, 'minutes', seconds, 'seconds')
     
-    # Displaying mean travel time
+    # Display mean travel time
     """
     Below, we will 
     """
@@ -191,18 +191,18 @@ def user_stats(df):
     start_time = time.time()
     
     
-    # Displaying counts of user types
+    # Display counts of user types
     user_type_count = df['User Type'].value_counts()
     print('User types:\n', user_type_count, '\n')
     
-    # Displaying counts of gender
+    # Display counts of gender
     try:
         gender_count = df['Gender'].value_counts()
         print('Gender:\n', gender_count, '\n')
     except:
         print('Missing data for gender count\n')
     
-    # Displaying earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth
     try:
         earliest_year_of_birth = df['Birth Year'].min()
         most_recent_year_of_birth = df['Birth Year'].max()
