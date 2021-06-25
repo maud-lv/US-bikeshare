@@ -80,11 +80,6 @@ def load_data(city, month, day):
  
     return df
 
-    def month_converter(month):
-        months = ['January', 'February', 'March', 'April', 'May', 'June']
-    
-    return months.index(month) + 1    
-
 def time_stats(df):
     """Generates statistics on the most frequent times of travel: most common month, most common day of the week and most common start hour"""
     
