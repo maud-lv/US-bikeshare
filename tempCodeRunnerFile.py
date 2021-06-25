@@ -218,15 +218,15 @@ def user_stats(df):
     print('-'*40)
 
 def raw_data(df):
-    """Generates 5 rows of raw data if the user is interested. Prompts a question and generates raw data according to the answer of the user."""
-    data = 0
-
+    """Generates 5 rows of raw data if the user is interested. Prompts a question and generates row data according to the answer of the user."""
+    i = 0
     while True:
-        answer = input('Would you like to see 5 lines of raw data? Enter yes or no: ')
-        if answer.lower() == 'yes':
-            print(df[data : data+5])
-            data += 5
-
+        show_data = input('\nWould you like to see 5 lines of raw data?\n')
+    
+        if show_data.lower() == 'yes':
+            five_rows = df.iloc[i:i+5]
+            print(five_rows)
+            i += 5
         else:
             break
 
