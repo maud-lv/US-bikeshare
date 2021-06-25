@@ -10,7 +10,7 @@ CITY_DATA = { 'Chicago': 'chicago.csv',
 
 city_list = ['Chicago', 'New York City', 'New York', 'Washington']
 
-month_list = ['January', 'February', 'March', 'April', 'May', 'June', 'All']
+month_list = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'All']
 
 day_list = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'All']
 
@@ -35,9 +35,9 @@ def get_filters():
 
     # TO DO: get user input for month (all, January, February, ... , June)
     while True:
-        month = input("\nWhat month would you like to look for?\n").title()
+        month = input("\nWould you like to look at Jan, Feb, Mar, Apr, May or Jun or all month?\n").title()
         if month not in month_list:
-            print("Invalid input. Please enter 'all' or a month. Valid entries: all, January, February, March, April, May or June.\n")
+            print("Invalid input. Please enter Jan, Feb, Mar, Apr, May, Jun or all.\n")
         else:
             break
 
@@ -71,7 +71,7 @@ def load_data(city, month, day):
     df['hour'] = df['Start Time'].dt.hour
 
     if month != 'All':
-        months = ['January', 'February', 'March', 'April', 'May', 'June']
+        months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
         month = months.index(month) + 1
         df = df[df['month'] == month]
     
